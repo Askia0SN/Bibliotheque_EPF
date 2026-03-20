@@ -1,0 +1,41 @@
+# Dépendances
+node_modules/
+package-lock.json
+
+# Environnement
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build
+dist/
+build/
+*.log
+
+# Uploads
+backend/uploads/
+uploads/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Backend
+Backend_bibliotheque/node_modules/
+Backend_bibliotheque/.env
+Backend_bibliotheque/uploads/
+
+# Frontend
+front_bibliotheque/node_modules/
+front_bibliotheque/.env
+front_bibliotheque/dist/
+front_bibliotheque/build/
