@@ -4,7 +4,7 @@ const path = require('path');
 require('dotenv').config();
 
 // Import des modèles et synchronisation
-const syncDatabase = require('./utils/syncDatabase');
+// (la syncDatabase() est appelée côté server.js pour éviter les duplications)
 
 const app = express();
 
@@ -20,10 +20,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Synchroniser la base de données au démarrage
-syncDatabase();
+// syncDatabase() est appelé côté serveur (voir server.js) pour éviter les duplications.
 
 // Routes (à créer plus tard)
-// app.use('/api/auth', require('./routes/authRoutes'));
+app.use('/api/auth', require('./routes/authRoutes'));
 // app.use('/api/categories', require('./routes/categoryRoutes'));
 // app.use('/api/books', require('./routes/bookRoutes'));
 // app.use('/api/members', require('./routes/memberRoutes'));
