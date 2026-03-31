@@ -75,8 +75,7 @@ const syncDatabase = async () => {
       await sequelize.sync();
       console.log("✅ Tables manquantes créées");
     } else {
-      console.log("✅ Schéma déjà présent: aucune synchronisation requise");
-    }
+      console.log("✅ Schéma déjà présent: aucune synchronisation requise")    }
 
     // ========== CRÉATION DES DONNÉES PAR DÉFAUT ==========
 
