@@ -1,7 +1,7 @@
 const Joi = require('joi');
 const { Op } = require('sequelize');
 const { Member } = require('../models');
-
+//test commit
 const createSchema = Joi.object({
   first_name: Joi.string().min(1).max(100).required(),
   last_name: Joi.string().min(1).max(100).required(),

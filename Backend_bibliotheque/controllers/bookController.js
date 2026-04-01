@@ -72,8 +72,7 @@ async function getBooks(req, res) {
     order: [['createdAt', 'DESC']],
     include: [{ model: Category, as: 'category', attributes: ['id', 'name'] }],
   });
-  // Si aucun livre trouvé, retourner une page vide avec totalPages = 1
-
+//test commit
   return res.status(200).json({
     total: count,
     page,
