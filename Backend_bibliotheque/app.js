@@ -27,7 +27,7 @@ app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/categories', require('./routes/categoryRoutes'));
 app.use('/api/books', require('./routes/bookRoutes'));
 app.use('/api/members', require('./routes/memberRoutes'));
-// app.use('/api/borrows', require('./routes/borrowRoutes'));
+app.use('/api/borrows', require('./routes/borrowRoutes'));
 app.use('/api/stats', require('./routes/statRoutes'));
 
 // Route de test

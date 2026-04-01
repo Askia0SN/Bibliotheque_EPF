@@ -67,6 +67,7 @@ export default function BorrowsPage() {
             <option value="">Tous les statuts</option>
             <option value="borrowed">En cours</option>
             <option value="returned">Retournés</option>
+            <option value="overdue">En retard</option>
           </select>
         </div>
       </div>
