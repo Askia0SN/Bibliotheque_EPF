@@ -24,11 +24,11 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Routes (à créer plus tard)
 app.use('/api/auth', require('./routes/authRoutes'));
-// app.use('/api/categories', require('./routes/categoryRoutes'));
-// app.use('/api/books', require('./routes/bookRoutes'));
-// app.use('/api/members', require('./routes/memberRoutes'));
+app.use('/api/categories', require('./routes/categoryRoutes'));
+app.use('/api/books', require('./routes/bookRoutes'));
+app.use('/api/members', require('./routes/memberRoutes'));
 // app.use('/api/borrows', require('./routes/borrowRoutes'));
-// app.use('/api/stats', require('./routes/statRoutes'));
+app.use('/api/stats', require('./routes/statRoutes'));
 
 // Route de test
 app.get('/api/test', (req, res) => {
