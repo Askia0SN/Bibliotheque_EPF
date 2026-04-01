@@ -36,15 +36,42 @@ export default function DashboardPage() {
       <div className="row">
         <StatCard title="Total Livres" value={stats.books?.totalBooks} icon="fa-book" color="primary" />
         <StatCard title="Livres Disponibles" value={stats.books?.totalAvailable} icon="fa-check-circle" color="success" />
+        <StatCard title="Exemplaires empruntés" value={stats.books?.totalBorrowed} icon="fa-book-reader" color="warning" />
         <StatCard title="Total Membres" value={stats.members?.totalMembers} icon="fa-users" color="info" />
-        <StatCard title="Emprunts Actifs" value={stats.borrows?.activeBorrows} icon="fa-hand-holding-heart" color="warning" />
       </div>
       <div className="row">
         <StatCard title="Membres Actifs" value={stats.members?.activeMembers} icon="fa-user-check" color="success" />
-        <StatCard title="Total Emprunts" value={stats.borrows?.totalBorrows} icon="fa-list" color="secondary" />
+        <StatCard title="Membres Inactifs" value={stats.members?.inactiveMembers} icon="fa-user-slash" color="secondary" />
+        <StatCard title="Emprunts Actifs" value={stats.borrows?.activeBorrows} icon="fa-hand-holding-heart" color="warning" />
+        <StatCard title="Total Emprunts" value={stats.borrows?.totalBorrows} icon="fa-list" color="info" />
+      </div>
+      <div className="row">
         <StatCard title="Retournés" value={stats.borrows?.returnedBorrows} icon="fa-undo" color="dark" />
         <StatCard title="En Retard" value={stats.borrows?.overdueBorrows} icon="fa-exclamation-triangle" color="danger" />
       </div>
+
+      {stats.books?.byCategory?.length > 0 && (
+        <div className="card mt-3">
+          <div className="card-header bg-white">
+            <strong><i className="fas fa-tags me-2 text-primary"></i>Livres par catégorie</strong>
+          </div>
+          <div className="card-body p-0">
+            <table className="table table-sm mb-0">
+              <thead className="table-light">
+                <tr><th>Catégorie</th><th>Nombre de livres</th></tr>
+              </thead>
+              <tbody>
+                {stats.books.byCategory.map((row) => (
+                  <tr key={row.category_id}>
+                    <td>{row.category?.name}</td>
+                    <td><span className="badge bg-primary">{row.count}</span></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
 
       {stats.borrows?.mostBorrowed?.length > 0 && (
         <div className="card mt-2">

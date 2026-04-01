@@ -72,7 +72,7 @@ async function getBooks(req, res) {
     order: [['createdAt', 'DESC']],
     include: [{ model: Category, as: 'category', attributes: ['id', 'name'] }],
   });
-
+//test commit
   return res.status(200).json({
     total: count,
     page,
